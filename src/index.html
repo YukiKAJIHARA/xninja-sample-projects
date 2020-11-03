@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script defer src="index.js"></script>
+  <script defer src="../node_modules/@x-ninja/o_o/dist/o_o.js"></script>
+</head>
+<body>
+  <h1>Routing Demo</h1>
+
+  <section ::pager>
+    <a id="router-pager-with-template-nav-1"
+      href="/aaa"
+      x-nav
+    >Page aaa</a><br>
+
+    <a id="router-pager-with-template-nav-2"
+      href="/bbb"
+      x-nav
+    >Page bbb</a><br>
+
+    <a id="router-pager-with-template-nav-3"
+      href="/ccc"
+      x-nav
+    >Page ccc</a><br>
+
+    <a id="router-pager-with-template-nav-4"
+      href="/ddd/11/xxx/444"
+      x-nav
+    >Page ddd id:11, number:444</a><br>
+
+    <!-- =================================================================== -->
+    <template x-route="/aaa">
+      <!-- {
+        title: '/aaa のタイトル',
+      } -->
+      <div>{{ title }}</div>
+      <title>page aaa</title>
+    </template>
+
+    <!-- =================================================================== -->
+    <template x-route="/bbb">
+      <!-- {
+        title: '/bbb のタイトル',
+      } -->
+      <div>{{ title }}</div>
+      <title>page bbb</title>
+    </template>
+
+    <!-- =================================================================== -->
+    <template x-route="/ccc">
+      <!-- {
+        title: '/ccc のタイトル',
+      } -->
+      <div>{{ title }}</div>
+      <title>page ccc</title>
+      <div x-import="./parts/button.html" _></div>
+    </template>
+
+    <!-- =================================================================== -->
+    <template x-route="/ddd/:id/xxx/:number"
+      x-page-creator="(page, parsedParams) => {
+        page.state = {
+          ...page.state ?? {},
+          ...parsedParams
+        }
+
+        return page
+      }"
+    >
+      <div>ddd (id:{{id}}, number:{{number}})</div>
+      <title>page ddd</title>
+    </template>
+  </section>
+
+
+
+  <!-- ///////////////////////////////////////////////////////////////////// -->
+  <hr>
+  <div x-placeholder _>
+    (none)
+  </div>
+</body> 
+</html>

@@ -2,10 +2,16 @@
   "name": "x-ninja-bulma",
   "version": "1.0.0",
   "description": "",
-  "scripts": {},
+  "scripts": {
+    "build": "sass ./src/style.scss:style.css",
+    "watch": "sass --watch ./src/style.scss:style.css",
+    "build:prod": "sass ./src/style.scss:style.css --style compressed"
+  },
   "author": "Yuuki Kajihara",
   "license": "ISC",
-  "devDependencies": {},
+  "devDependencies": {
+    "sass": "^1.28.0"
+  },
   "dependencies": {
     "@x-ninja/o_o": "0.0.1",
     "bulma": "^0.9.1"

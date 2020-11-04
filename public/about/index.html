@@ -1,26 +1,51 @@
 <!DOCTYPE html>
-<html lang="en" class="has-navbar-fixed-bottom">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <base href="../">
-  <title>x-ninja and bulma (with sass complie) | About</title>
+
+  <!-- Set title -->
+  <title>x-ninja and bulma (offline) | About</title>
+
+  <!-- Load favicon -->
   <link rel="shortcut icon" href="./assets/favicon.ico">
-  <script defer src="index.js"></script>
-  <script defer src="../node_modules/@x-ninja/o_o/dist/o_o.js"></script>
-  <link rel="stylesheet" href="./style.css">
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+  <!-- Load fonts and icons -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
   <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP&family=Open+Sans&display=swap">
+
+  <!-- Load bulma -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css" integrity="sha256-WLKGWSIJYerRN8tbNGtXWVYnUM5wMJTXD8eG4NtGcDM=" crossorigin="anonymous">
+
+  <!-- Load external css -->
+  <link rel="stylesheet" href="./style.css">
+
+  <!-- Load latest x-ninja -->
+  <script defer src="https://unpkg.com/@x-ninja/o_o/dist/o_o.js" crossorigin="anonymous"></script>
+  <!-- Load x-ninja with integrity check (but not latest one) -->
+  <!-- You can get a integrity on "https://unpkg.com/@x-ninja/o_o@0.0.1/dist/o_o.js?meta" -->
+  <!-- <script defer src="https://unpkg.com/@x-ninja/o_o@0.0.1/dist/o_o.js" integrity="sha384-O6Ki1tbRJ6W1qjfDJH0r4lLLL8w/Y/gyFkk6ZwtWz/FmghswcgvYzGfDPO7s80TJ" crossorigin="anonymous"></script> -->
+
+  <!-- Load external javascript -->
+  <script defer src="index.js"></script>
+
   <style>
-    html {
-      overflow: hidden;
+    /* You can write style here */
+    body {
+      font-family: 'Noto Sans JP', 'Roboto', sans-serif;
     }
   </style>
+  
 </head>
 <body class="has-navbar-fixed-top">
 
+  <!-- "./parts/nav.html" will load automatically and inserted here -->
+  <!-- Don't forget a underscore at end of tag -->
   <div x-import="./parts/nav.html" _></div>
 
+  <!-- "Home" page contents -->
   <section class="hero is-info is-fullheight">
     <div class="hero-body">
       <div class="container">

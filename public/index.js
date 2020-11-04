@@ -1,3 +1,1 @@
-import './style.scss';
-
-alert("index.js is loaded")
+console.log("index.js is loaded")

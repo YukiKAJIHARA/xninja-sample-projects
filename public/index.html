@@ -1,86 +1,45 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="has-navbar-fixed-bottom">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <base href="./">
+  <title>x-ninja and bulma (with sass complie) | Home</title>
+  <link rel="shortcut icon" href="./assets/favicon.ico">
   <script defer src="index.js"></script>
   <script defer src="../node_modules/@x-ninja/o_o/dist/o_o.js"></script>
   <link rel="stylesheet" href="./style.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+  <style>
+    html {
+      overflow: hidden;
+    }
+  </style>
 </head>
-<body>
-  <h1>Routing Demo</h1>
+<body class="has-navbar-fixed-top">
 
-  <section ::pager>
-    <a id="router-pager-with-template-nav-1"
-      href="/aaa"
-      x-nav
-    >Page aaa</a><br>
 
-    <a id="router-pager-with-template-nav-2"
-      href="/bbb"
-      x-nav
-    >Page bbb</a><br>
 
-    <a id="router-pager-with-template-nav-3"
-      href="/ccc"
-      x-nav
-    >Page ccc</a><br>
 
-    <a id="router-pager-with-template-nav-4"
-      href="/ddd/11/xxx/444"
-      x-nav
-    >Page ddd id:11, number:444</a><br>
+  <div x-import="./parts/nav.html" _></div>
 
-    <!-- =================================================================== -->
-    <template x-route="/aaa">
-      <!-- {
-        title: '/aaa のタイトル',
-      } -->
-      <div>{{ title }}</div>
-      <title>page aaa</title>
-    </template>
 
-    <!-- =================================================================== -->
-    <template x-route="/bbb">
-      <!-- {
-        title: '/bbb のタイトル',
-      } -->
-      <div>{{ title }}</div>
-      <title>page bbb</title>
-    </template>
 
-    <!-- =================================================================== -->
-    <template x-route="/ccc">
-      <!-- {
-        title: '/ccc のタイトル',
-      } -->
-      <div>{{ title }}</div>
-      <title>page ccc</title>
-      <div x-import="./parts/button.html" _></div>
-    </template>
 
-    <!-- =================================================================== -->
-    <template x-route="/ddd/:id/xxx/:number"
-      x-page-creator="(page, parsedParams) => {
-        page.state = {
-          ...page.state ?? {},
-          ...parsedParams
-        }
 
-        return page
-      }"
-    >
-      <div>ddd (id:{{id}}, number:{{number}})</div>
-      <title>page ddd</title>
-    </template>
+  <section class="hero is-primary is-fullheight">
+    <div class="hero-body">
+      <div class="container">
+        <h1 class="title">
+          Home
+        </h1>
+        <h2 class="subtitle">
+          home page
+        </h2>
+      </div>
+    </div>
   </section>
-
-
-
-  <!-- ///////////////////////////////////////////////////////////////////// -->
-  <hr>
-  <div x-placeholder _>
-    (none)
-  </div>
+  
 </body> 
 </html>

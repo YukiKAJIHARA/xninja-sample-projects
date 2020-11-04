@@ -9,12 +9,13 @@
   },
   "author": "Yuuki Kajihara",
   "license": "ISC",
-  "devDependencies": {
-    "sass": "^1.28.0"
-  },
+  "devDependencies": {},
   "dependencies": {
     "@fortawesome/fontawesome-free": "^5.15.1",
+    "@mdi/font": "^5.8.55",
     "@x-ninja/o_o": "0.0.1",
-    "bulma": "^0.9.1"
+    "bulma": "^0.9.1",
+    "noto-sans-jp": "^27.0.0",
+    "typeface-roboto": "^1.1.13"
   }
 }

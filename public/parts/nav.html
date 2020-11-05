@@ -1,7 +1,7 @@
 <script defer src="../../node_modules/@x-ninja/o_o/dist/unit/gimmick._.js"></script>
 
-<nav class="navbar is-fixed-top is-transparent">
-  <div class="navbar-brand">
+<nav class="navbar is-fixed-top is-transparent" x-state="{ isMenuOpen: false }" ::>
+  <div class="navbar-brand" :style="">
     <a class="navbar-item" href="./">
       <svg x="0px" y="0px" width="100px" height="30px" xmlns="http://www.w3.org/2000/svg" xmlns:xl="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 178.71 66.85" class="design-logo-in-header">
         <title>x-ninja logo</title>
@@ -15,14 +15,14 @@
         <circle class="a" cx="40.39" cy="40.39" r="4.79" transform="translate(-5.95 6.99) rotate(-9.22)"></circle>
       </svg>
     </a>
-    <div class="navbar-burger burger" data-target="navbarExampleTransparentExample">
+    <div class="navbar-burger burger" :class="{'is-active':isMenuOpen}" data-target="navbarExampleTransparentExample" @click="isMenuOpen = !isMenuOpen">
       <span></span>
       <span></span>
       <span></span>
     </div>
   </div>
 
-  <div id="navbarExampleTransparentExample" class="navbar-menu">
+  <div id="navbarExampleTransparentExample" class="navbar-menu" :class="{'is-active':isMenuOpen}">
     <div class="navbar-start">
       <a class="navbar-item" href="./index.html">
         Home
@@ -58,6 +58,10 @@
               </span>
             </a>
           </p>
+        </div>
+      </div>
+      <div class="navbar-item">
+        <div class="field is-grouped">
           <p class="control">
             <a class="button is-info" href="./about/index.html">
               <span class="icon">

@@ -4,21 +4,21 @@
 <!-- You can get a integrity on "https://unpkg.com/@x-ninja/o_o@0.0.1/dist/unit/gimmick._.js?meta" -->
 <!-- <script defer src="https://unpkg.com/@x-ninja/o_o@0.0.1/dist/unit/gimmick._.js" integrity="sha384-Xs2b12ju6286NU4ud5tJ6AwkoXAZGehn779bmuFWXUAVJrpqo/gALG7rWWQ4OhN9" crossorigin="anonymous"></script> -->
 
-<nav class="navbar is-fixed-top is-transparent">
-  <div class="navbar-brand">
+<nav class="navbar is-fixed-top is-transparent" x-state="{ isMenuOpen: false }" ::>
+  <div class="navbar-brand" :style="">
     <a class="navbar-item" href="./">
       <div>
         <img class="mt-2" src="../assets/x-ninja-logo.svg">
       </div>
     </a>
-    <div class="navbar-burger burger" data-target="navbarExampleTransparentExample">
+    <div class="navbar-burger burger" :class="{'is-active':isMenuOpen}" data-target="navbarExampleTransparentExample" @click="isMenuOpen = !isMenuOpen">
       <span></span>
       <span></span>
       <span></span>
     </div>
   </div>
 
-  <div id="navbarExampleTransparentExample" class="navbar-menu">
+  <div id="navbarExampleTransparentExample" class="navbar-menu" :class="{'is-active':isMenuOpen}">
     <div class="navbar-start">
       <a class="navbar-item" href="./index.html">
         Home
@@ -54,6 +54,10 @@
               </span>
             </a>
           </p>
+        </div>
+      </div>
+      <div class="navbar-item">
+        <div class="field is-grouped">
           <p class="control">
             <a class="button is-info" href="./about/index.html">
               <span class="icon">
